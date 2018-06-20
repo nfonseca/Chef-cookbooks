@@ -1,0 +1,105 @@
+I, [2018-06-13T14:14:50.731981 #19620]  INFO -- default-rhel: -----> Creating <default-rhel>...
+I, [2018-06-13T14:14:53.664823 #19620]  INFO -- default-rhel: Bringing machine 'default' up with 'virtualbox' provider...
+I, [2018-06-13T14:14:56.530928 #19620]  INFO -- default-rhel: ==> default: Box 'rhel' could not be found. Attempting to find and install...
+I, [2018-06-13T14:14:56.531094 #19620]  INFO -- default-rhel:     default: Box Provider: virtualbox
+I, [2018-06-13T14:14:56.531203 #19620]  INFO -- default-rhel:     default: Box Version: >= 0
+I, [2018-06-13T14:14:56.810677 #19620]  INFO -- default-rhel: ==> default: Box file was not detected as metadata. Adding it directly...
+I, [2018-06-13T14:14:56.810997 #19620]  INFO -- default-rhel: ==> default: Adding box 'rhel' (v0) for provider: virtualbox
+I, [2018-06-13T14:14:56.811099 #19620]  INFO -- default-rhel:     default: Downloading: rhel
+I, [2018-06-13T14:14:56.900948 #19620]  INFO -- default-rhel: [K    default: 
+I, [2018-06-13T14:14:56.901265 #19620]  INFO -- default-rhel: An error occurred while downloading the remote file. The error
+I, [2018-06-13T14:14:56.904434 #19620]  INFO -- default-rhel: message, if any, is reproduced below. Please fix this error and try
+I, [2018-06-13T14:14:56.905021 #19620]  INFO -- default-rhel: again.
+I, [2018-06-13T14:14:56.905140 #19620]  INFO -- default-rhel: 
+I, [2018-06-13T14:14:56.905274 #19620]  INFO -- default-rhel: Couldn't open file /C:/Users/chamun/Documents/DELL-EMC-Job/learn-chef/cookbooks/dvd_store3_postgres/.kitchen/kitchen-vagrant/default-rhel/rhel
+E, [2018-06-13T14:14:56.932416 #19620] ERROR -- default-rhel: Create failed on instance <default-rhel>.
+E, [2018-06-13T14:14:56.932650 #19620] ERROR -- default-rhel: ------Exception-------
+E, [2018-06-13T14:14:56.932747 #19620] ERROR -- default-rhel: Class: Kitchen::ShellOut::ShellCommandFailed
+E, [2018-06-13T14:14:56.932811 #19620] ERROR -- default-rhel: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'rhel' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'rhel' (v0) for provider: virtualbox
+    default: Downloading: rhel
+[K    default:
+STDERR: An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file /C:/Users/chamun/Documents/DELL-EMC-Job/learn-chef/cookbooks/dvd_store3_postgres/.kitchen/kitchen-vagrant/default-rhel/rhel
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2018-06-13T14:14:56.932882 #19620] ERROR -- default-rhel: ----------------------
+E, [2018-06-13T14:14:56.932956 #19620] ERROR -- default-rhel: ------Backtrace-------
+E, [2018-06-13T14:14:56.933021 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/shell_out.rb:71:in `rescue in run_command'
+E, [2018-06-13T14:14:56.933080 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/shell_out.rb:58:in `run_command'
+E, [2018-06-13T14:14:56.933132 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:452:in `run_command'
+E, [2018-06-13T14:14:56.933184 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:399:in `run'
+E, [2018-06-13T14:14:56.933234 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:483:in `run_vagrant_up'
+E, [2018-06-13T14:14:56.933284 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:109:in `create'
+E, [2018-06-13T14:14:56.933369 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `public_send'
+E, [2018-06-13T14:14:56.933453 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `block in perform_action'
+E, [2018-06-13T14:14:56.933528 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:533:in `block in synchronize_or_call'
+E, [2018-06-13T14:14:56.933584 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:531:in `synchronize'
+E, [2018-06-13T14:14:56.933636 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:531:in `synchronize_or_call'
+E, [2018-06-13T14:14:56.933687 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-06-13T14:14:56.933737 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-06-13T14:14:56.933787 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-06-13T14:14:56.933837 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `perform_action'
+E, [2018-06-13T14:14:56.933892 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:379:in `create_action'
+E, [2018-06-13T14:14:56.933946 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-06-13T14:14:56.934009 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-06-13T14:14:56.934064 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-06-13T14:14:56.934116 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:124:in `create'
+E, [2018-06-13T14:14:56.934166 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-06-13T14:14:56.934216 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-06-13T14:14:56.934267 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-06-13T14:14:56.934344 #19620] ERROR -- default-rhel: ----End Backtrace-----
+E, [2018-06-13T14:14:56.934400 #19620] ERROR -- default-rhel: ---Nested Exception---
+E, [2018-06-13T14:14:56.934463 #19620] ERROR -- default-rhel: Class: Mixlib::ShellOut::ShellCommandFailed
+E, [2018-06-13T14:14:56.934517 #19620] ERROR -- default-rhel: Message: Expected process to exit with [0], but received '1'
+---- Begin output of vagrant up --no-provision --provider virtualbox ----
+STDOUT: Bringing machine 'default' up with 'virtualbox' provider...
+==> default: Box 'rhel' could not be found. Attempting to find and install...
+    default: Box Provider: virtualbox
+    default: Box Version: >= 0
+==> default: Box file was not detected as metadata. Adding it directly...
+==> default: Adding box 'rhel' (v0) for provider: virtualbox
+    default: Downloading: rhel
+[K    default:
+STDERR: An error occurred while downloading the remote file. The error
+message, if any, is reproduced below. Please fix this error and try
+again.
+
+Couldn't open file /C:/Users/chamun/Documents/DELL-EMC-Job/learn-chef/cookbooks/dvd_store3_postgres/.kitchen/kitchen-vagrant/default-rhel/rhel
+---- End output of vagrant up --no-provision --provider virtualbox ----
+Ran vagrant up --no-provision --provider virtualbox returned 1
+E, [2018-06-13T14:14:56.934602 #19620] ERROR -- default-rhel: ----------------------
+E, [2018-06-13T14:14:56.934658 #19620] ERROR -- default-rhel: ------Backtrace-------
+E, [2018-06-13T14:14:56.934708 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/shell_out.rb:71:in `rescue in run_command'
+E, [2018-06-13T14:14:56.934760 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/shell_out.rb:58:in `run_command'
+E, [2018-06-13T14:14:56.934810 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:452:in `run_command'
+E, [2018-06-13T14:14:56.934859 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:399:in `run'
+E, [2018-06-13T14:14:56.934920 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:483:in `run_vagrant_up'
+E, [2018-06-13T14:14:56.934985 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/kitchen-vagrant-1.3.2/lib/kitchen/driver/vagrant.rb:109:in `create'
+E, [2018-06-13T14:14:56.935043 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `public_send'
+E, [2018-06-13T14:14:56.935122 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `block in perform_action'
+E, [2018-06-13T14:14:56.935184 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:533:in `block in synchronize_or_call'
+E, [2018-06-13T14:14:56.935238 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:531:in `synchronize'
+E, [2018-06-13T14:14:56.935290 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:531:in `synchronize_or_call'
+E, [2018-06-13T14:14:56.935342 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-06-13T14:14:56.935399 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-06-13T14:14:56.935455 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-06-13T14:14:56.935507 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:469:in `perform_action'
+E, [2018-06-13T14:14:56.935557 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:379:in `create_action'
+E, [2018-06-13T14:14:56.935610 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-06-13T14:14:56.935660 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-06-13T14:14:56.935710 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-06-13T14:14:56.935761 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:124:in `create'
+E, [2018-06-13T14:14:56.935833 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-06-13T14:14:56.935927 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-06-13T14:14:56.936011 #19620] ERROR -- default-rhel: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-06-13T14:14:56.936068 #19620] ERROR -- default-rhel: ----End Backtrace-----

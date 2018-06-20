@@ -1,0 +1,45 @@
+I, [2018-06-13T13:38:02.178241 #8904]  INFO -- default-centos-7: -----> Converging <default-centos-7>...
+I, [2018-06-13T13:38:02.183975 #8904]  INFO -- default-centos-7: Preparing files for transfer
+I, [2018-06-13T13:38:02.184387 #8904]  INFO -- default-centos-7: Preparing dna.json
+I, [2018-06-13T13:38:02.186867 #8904]  INFO -- default-centos-7: Resolving cookbook dependencies with Berkshelf 7.0.2...
+I, [2018-06-13T13:38:02.891902 #8904]  INFO -- default-centos-7: Removing non-cookbook files before transfer
+I, [2018-06-13T13:38:02.935006 #8904]  INFO -- default-centos-7: Preparing validation.pem
+I, [2018-06-13T13:38:02.937276 #8904]  INFO -- default-centos-7: Preparing client.rb
+I, [2018-06-13T13:38:03.341278 #8904]  INFO -- default-centos-7: -----> Chef Omnibus installation detected (install only if missing)
+I, [2018-06-13T13:38:03.399017 #8904]  INFO -- default-centos-7: Transferring files to <default-centos-7>
+I, [2018-06-13T13:38:06.209800 #8904]  INFO -- default-centos-7: Starting Chef Client, version 14.2.0
+I, [2018-06-13T13:38:07.528791 #8904]  INFO -- default-centos-7: resolving cookbooks for run list: ["learn_chef_httpd::default"]
+I, [2018-06-13T13:38:07.560354 #8904]  INFO -- default-centos-7: Synchronizing Cookbooks:
+I, [2018-06-13T13:38:07.571420 #8904]  INFO -- default-centos-7:   - learn_chef_httpd (0.1.0)
+I, [2018-06-13T13:38:07.582595 #8904]  INFO -- default-centos-7: Installing Cookbook Gems:
+I, [2018-06-13T13:38:07.582758 #8904]  INFO -- default-centos-7: Compiling Cookbooks...
+I, [2018-06-13T13:38:07.584017 #8904]  INFO -- default-centos-7: Converging 5 resources
+I, [2018-06-13T13:38:07.584413 #8904]  INFO -- default-centos-7: Recipe: learn_chef_httpd::default
+I, [2018-06-13T13:38:08.906460 #8904]  INFO -- default-centos-7:   * yum_package[httpd] action install (up to date)
+I, [2018-06-13T13:38:08.968110 #8904]  INFO -- default-centos-7:   * service[httpd] action enable (up to date)
+I, [2018-06-13T13:38:09.019768 #8904]  INFO -- default-centos-7:   * service[httpd] action start (up to date)
+I, [2018-06-13T13:38:09.102977 #8904]  INFO -- default-centos-7:   * group[web_admin] action create
+I, [2018-06-13T13:38:09.103108 #8904]  INFO -- default-centos-7:     - create group web_admin
+I, [2018-06-13T13:38:09.138191 #8904]  INFO -- default-centos-7:   * linux_user[web_admin] action create
+I, [2018-06-13T13:38:09.138333 #8904]  INFO -- default-centos-7:     - create user web_admin
+I, [2018-06-13T13:38:09.138470 #8904]  INFO -- default-centos-7:   * template[/var/www/html/index.html] action create
+I, [2018-06-13T13:38:09.138539 #8904]  INFO -- default-centos-7:     - create new file /var/www/html/index.html
+I, [2018-06-13T13:38:09.138600 #8904]  INFO -- default-centos-7:     - update content in file /var/www/html/index.html from none to ef4ffd
+I, [2018-06-13T13:38:09.138662 #8904]  INFO -- default-centos-7:     --- /var/www/html/index.html	2018-06-13 12:38:08.075859131 +0000
+I, [2018-06-13T13:38:09.138734 #8904]  INFO -- default-centos-7:     +++ /var/www/html/.chef-index20180613-3529-1x6kj6y.html	2018-06-13 12:38:08.075859131 +0000
+I, [2018-06-13T13:38:09.138795 #8904]  INFO -- default-centos-7:     @@ -1 +1,6 @@
+I, [2018-06-13T13:38:09.138883 #8904]  INFO -- default-centos-7:     +<html>
+I, [2018-06-13T13:38:09.138956 #8904]  INFO -- default-centos-7:     +  <body>
+I, [2018-06-13T13:38:09.139018 #8904]  INFO -- default-centos-7:     +    <h1>hello world</h1>
+I, [2018-06-13T13:38:09.139076 #8904]  INFO -- default-centos-7:     +  </body>
+I, [2018-06-13T13:38:09.156143 #8904]  INFO -- default-centos-7:     +</html>
+I, [2018-06-13T13:38:09.158263 #8904]  INFO -- default-centos-7:     - change mode from '' to '0644'
+I, [2018-06-13T13:38:09.158378 #8904]  INFO -- default-centos-7:     - change owner from '' to 'web_admin'
+I, [2018-06-13T13:38:09.191693 #8904]  INFO -- default-centos-7:     - change group from '' to 'web_admin'
+I, [2018-06-13T13:38:09.191841 #8904]  INFO -- default-centos-7:     - restore selinux security context
+I, [2018-06-13T13:38:09.297498 #8904]  INFO -- default-centos-7: 
+I, [2018-06-13T13:38:09.297629 #8904]  INFO -- default-centos-7: Running handlers:
+I, [2018-06-13T13:38:09.297742 #8904]  INFO -- default-centos-7: Running handlers complete
+I, [2018-06-13T13:38:09.297832 #8904]  INFO -- default-centos-7: Chef Client finished, 3/6 resources updated in 03 seconds
+I, [2018-06-13T13:38:09.325949 #8904]  INFO -- default-centos-7: Downloading files from <default-centos-7>
+I, [2018-06-13T13:38:09.354878 #8904]  INFO -- default-centos-7: Finished converging <default-centos-7> (0m7.17s).

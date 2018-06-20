@@ -1,0 +1,7 @@
+DEPENDENCIES
+  dvd_store3_postgres
+    path: .
+    metadata: true
+
+GRAPH
+  dvd_store3_postgres (0.1.0)
