@@ -1,5 +1,134 @@
-I, [2018-06-22T12:15:49.308650 #544]  INFO -- default-centos-75: -----> Destroying <default-centos-75>...
-I, [2018-06-22T12:15:55.953862 #544]  INFO -- default-centos-75: ==> default: Forcing shutdown of VM...
-I, [2018-06-22T12:15:57.345798 #544]  INFO -- default-centos-75: ==> default: Destroying VM and associated drives...
-I, [2018-06-22T12:15:57.858924 #544]  INFO -- default-centos-75: Vagrant instance <default-centos-75> destroyed.
-I, [2018-06-22T12:15:57.863078 #544]  INFO -- default-centos-75: Finished destroying <default-centos-75> (0m8.55s).
+I, [2018-06-22T14:28:02.885361 #16080]  INFO -- default-centos-75: -----> Converging <default-centos-75>...
+I, [2018-06-22T14:28:02.891152 #16080]  INFO -- default-centos-75: Preparing files for transfer
+I, [2018-06-22T14:28:02.891521 #16080]  INFO -- default-centos-75: Preparing dna.json
+I, [2018-06-22T14:28:02.895505 #16080]  INFO -- default-centos-75: Resolving cookbook dependencies with Berkshelf 7.0.2...
+I, [2018-06-22T14:28:07.636252 #16080]  INFO -- default-centos-75: Removing non-cookbook files before transfer
+I, [2018-06-22T14:28:07.698139 #16080]  INFO -- default-centos-75: Preparing validation.pem
+I, [2018-06-22T14:28:07.702488 #16080]  INFO -- default-centos-75: Preparing client.rb
+I, [2018-06-22T14:28:08.135587 #16080]  INFO -- default-centos-75: -----> Chef Omnibus installation detected (install only if missing)
+I, [2018-06-22T14:28:08.193766 #16080]  INFO -- default-centos-75: Transferring files to <default-centos-75>
+I, [2018-06-22T14:28:11.282363 #16080]  INFO -- default-centos-75: Starting Chef Client, version 14.2.0
+I, [2018-06-22T14:28:12.798794 #16080]  INFO -- default-centos-75: resolving cookbooks for run list: ["dvd_store3_postgres::default"]
+I, [2018-06-22T14:28:12.820052 #16080]  INFO -- default-centos-75: Synchronizing Cookbooks:
+I, [2018-06-22T14:28:12.820416 #16080]  INFO -- default-centos-75:   - dvd_store3_postgres (0.1.0)
+I, [2018-06-22T14:28:12.833922 #16080]  INFO -- default-centos-75: Installing Cookbook Gems:
+I, [2018-06-22T14:28:12.834800 #16080]  INFO -- default-centos-75: Compiling Cookbooks...
+I, [2018-06-22T14:28:12.835078 #16080]  INFO -- default-centos-75: Converging 5 resources
+I, [2018-06-22T14:28:12.835145 #16080]  INFO -- default-centos-75: Recipe: dvd_store3_postgres::default
+I, [2018-06-22T14:28:14.289029 #16080]  INFO -- default-centos-75:   * yum_package[Base Line] action install (up to date)
+I, [2018-06-22T14:28:14.353139 #16080]  INFO -- default-centos-75:   * service[mariadb] action start (up to date)
+I, [2018-06-22T14:28:14.406948 #16080]  INFO -- default-centos-75:   * service[httpd] action start (up to date)
+I, [2018-06-22T14:28:14.428735 #16080]  INFO -- default-centos-75:   * execute[git clone dvdstore] action run
+I, [2018-06-22T14:28:14.428854 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.428919 #16080]  INFO -- default-centos-75:     ================================================================================
+I, [2018-06-22T14:28:14.429007 #16080]  INFO -- default-centos-75:     Error executing action `run` on resource 'execute[git clone dvdstore]'
+I, [2018-06-22T14:28:14.429065 #16080]  INFO -- default-centos-75:     ================================================================================
+I, [2018-06-22T14:28:14.429124 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.429179 #16080]  INFO -- default-centos-75:     Mixlib::ShellOut::ShellCommandFailed
+I, [2018-06-22T14:28:14.429234 #16080]  INFO -- default-centos-75:     ------------------------------------
+I, [2018-06-22T14:28:14.429289 #16080]  INFO -- default-centos-75:     Expected process to exit with [0], but received '128'
+I, [2018-06-22T14:28:14.429348 #16080]  INFO -- default-centos-75:     ---- Begin output of git clone https://github.com/dvdstore/ds3.git ----
+I, [2018-06-22T14:28:14.429430 #16080]  INFO -- default-centos-75:     STDOUT: 
+I, [2018-06-22T14:28:14.429492 #16080]  INFO -- default-centos-75:     STDERR: fatal: destination path 'ds3' already exists and is not an empty directory.
+I, [2018-06-22T14:28:14.429550 #16080]  INFO -- default-centos-75:     ---- End output of git clone https://github.com/dvdstore/ds3.git ----
+I, [2018-06-22T14:28:14.429606 #16080]  INFO -- default-centos-75:     Ran git clone https://github.com/dvdstore/ds3.git returned 128
+I, [2018-06-22T14:28:14.429661 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.429716 #16080]  INFO -- default-centos-75:     Resource Declaration:
+I, [2018-06-22T14:28:14.429770 #16080]  INFO -- default-centos-75:     ---------------------
+I, [2018-06-22T14:28:14.429826 #16080]  INFO -- default-centos-75:     # In /tmp/kitchen/cache/cookbooks/dvd_store3_postgres/recipes/default.rb
+I, [2018-06-22T14:28:14.429944 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.430004 #16080]  INFO -- default-centos-75:      38: execute 'git clone dvdstore' do
+I, [2018-06-22T14:28:14.430079 #16080]  INFO -- default-centos-75:      39:   cwd '/opt'
+I, [2018-06-22T14:28:14.430134 #16080]  INFO -- default-centos-75:      40:   command 'git clone https://github.com/dvdstore/ds3.git'
+I, [2018-06-22T14:28:14.430188 #16080]  INFO -- default-centos-75:      41: end
+I, [2018-06-22T14:28:14.430245 #16080]  INFO -- default-centos-75:      42: 
+I, [2018-06-22T14:28:14.430364 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.430453 #16080]  INFO -- default-centos-75:     Compiled Resource:
+I, [2018-06-22T14:28:14.430515 #16080]  INFO -- default-centos-75:     ------------------
+I, [2018-06-22T14:28:14.430576 #16080]  INFO -- default-centos-75:     # Declared in /tmp/kitchen/cache/cookbooks/dvd_store3_postgres/recipes/default.rb:38:in `from_file'
+I, [2018-06-22T14:28:14.430637 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.430693 #16080]  INFO -- default-centos-75:     execute("git clone dvdstore") do
+I, [2018-06-22T14:28:14.430748 #16080]  INFO -- default-centos-75:       action [:run]
+I, [2018-06-22T14:28:14.430804 #16080]  INFO -- default-centos-75:       default_guard_interpreter :execute
+I, [2018-06-22T14:28:14.430860 #16080]  INFO -- default-centos-75:       command "git clone https://github.com/dvdstore/ds3.git"
+I, [2018-06-22T14:28:14.430915 #16080]  INFO -- default-centos-75:       backup 5
+I, [2018-06-22T14:28:14.430969 #16080]  INFO -- default-centos-75:       declared_type :execute
+I, [2018-06-22T14:28:14.431023 #16080]  INFO -- default-centos-75:       cookbook_name "dvd_store3_postgres"
+I, [2018-06-22T14:28:14.431105 #16080]  INFO -- default-centos-75:       recipe_name "default"
+I, [2018-06-22T14:28:14.431174 #16080]  INFO -- default-centos-75:       cwd "/opt"
+I, [2018-06-22T14:28:14.431239 #16080]  INFO -- default-centos-75:       domain nil
+I, [2018-06-22T14:28:14.431294 #16080]  INFO -- default-centos-75:       user nil
+I, [2018-06-22T14:28:14.431348 #16080]  INFO -- default-centos-75:     end
+I, [2018-06-22T14:28:14.431402 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.431455 #16080]  INFO -- default-centos-75:     System Info:
+I, [2018-06-22T14:28:14.431509 #16080]  INFO -- default-centos-75:     ------------
+I, [2018-06-22T14:28:14.431562 #16080]  INFO -- default-centos-75:     chef_version=14.2.0
+I, [2018-06-22T14:28:14.431615 #16080]  INFO -- default-centos-75:     platform=centos
+I, [2018-06-22T14:28:14.431669 #16080]  INFO -- default-centos-75:     platform_version=7.5.1804
+I, [2018-06-22T14:28:14.431725 #16080]  INFO -- default-centos-75:     ruby=ruby 2.5.1p57 (2018-03-29 revision 63029) [x86_64-linux]
+I, [2018-06-22T14:28:14.431779 #16080]  INFO -- default-centos-75:     program_name=/opt/chef/bin/chef-client
+I, [2018-06-22T14:28:14.431833 #16080]  INFO -- default-centos-75:     executable=/opt/chef/bin/chef-client
+I, [2018-06-22T14:28:14.431887 #16080]  INFO -- default-centos-75:     
+I, [2018-06-22T14:28:14.431940 #16080]  INFO -- default-centos-75: 
+I, [2018-06-22T14:28:14.432011 #16080]  INFO -- default-centos-75: Running handlers:
+I, [2018-06-22T14:28:14.432074 #16080]  INFO -- default-centos-75: [2018-06-22T13:28:14+00:00] ERROR: Running exception handlers
+I, [2018-06-22T14:28:14.432136 #16080]  INFO -- default-centos-75: Running handlers complete
+I, [2018-06-22T14:28:14.432191 #16080]  INFO -- default-centos-75: [2018-06-22T13:28:14+00:00] ERROR: Exception handlers complete
+I, [2018-06-22T14:28:14.432246 #16080]  INFO -- default-centos-75: Chef Client failed. 0 resources updated in 03 seconds
+I, [2018-06-22T14:28:14.432303 #16080]  INFO -- default-centos-75: [2018-06-22T13:28:14+00:00] FATAL: Stacktrace dumped to /tmp/kitchen/cache/chef-stacktrace.out
+I, [2018-06-22T14:28:14.432358 #16080]  INFO -- default-centos-75: [2018-06-22T13:28:14+00:00] FATAL: Please provide the contents of the stacktrace.out file if you file a bug report
+I, [2018-06-22T14:28:14.432459 #16080]  INFO -- default-centos-75: [2018-06-22T13:28:14+00:00] FATAL: Mixlib::ShellOut::ShellCommandFailed: execute[git clone dvdstore] (dvd_store3_postgres::default line 38) had an error: Mixlib::ShellOut::ShellCommandFailed: Expected process to exit with [0], but received '128'
+I, [2018-06-22T14:28:14.432519 #16080]  INFO -- default-centos-75: ---- Begin output of git clone https://github.com/dvdstore/ds3.git ----
+I, [2018-06-22T14:28:14.432575 #16080]  INFO -- default-centos-75: STDOUT: 
+I, [2018-06-22T14:28:14.432629 #16080]  INFO -- default-centos-75: STDERR: fatal: destination path 'ds3' already exists and is not an empty directory.
+I, [2018-06-22T14:28:14.432683 #16080]  INFO -- default-centos-75: ---- End output of git clone https://github.com/dvdstore/ds3.git ----
+I, [2018-06-22T14:28:14.432737 #16080]  INFO -- default-centos-75: Ran git clone https://github.com/dvdstore/ds3.git returned 128
+E, [2018-06-22T14:28:14.522726 #16080] ERROR -- default-centos-75: Converge failed on instance <default-centos-75>.
+E, [2018-06-22T14:28:14.522920 #16080] ERROR -- default-centos-75: ------Exception-------
+E, [2018-06-22T14:28:14.522981 #16080] ERROR -- default-centos-75: Class: Kitchen::ActionFailed
+E, [2018-06-22T14:28:14.523035 #16080] ERROR -- default-centos-75: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2018-06-22T14:28:14.523134 #16080] ERROR -- default-centos-75: ----------------------
+E, [2018-06-22T14:28:14.523219 #16080] ERROR -- default-centos-75: ------Backtrace-------
+E, [2018-06-22T14:28:14.523283 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/provisioner/base.rb:91:in `rescue in call'
+E, [2018-06-22T14:28:14.523358 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/provisioner/base.rb:67:in `call'
+E, [2018-06-22T14:28:14.523412 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-06-22T14:28:14.523464 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-06-22T14:28:14.523519 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-06-22T14:28:14.523571 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-06-22T14:28:14.523626 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-06-22T14:28:14.523677 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-06-22T14:28:14.523729 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-06-22T14:28:14.523780 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-06-22T14:28:14.523845 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-06-22T14:28:14.523902 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-06-22T14:28:14.523961 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-06-22T14:28:14.524028 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-06-22T14:28:14.524083 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-06-22T14:28:14.524133 #16080] ERROR -- default-centos-75: ----End Backtrace-----
+E, [2018-06-22T14:28:14.524183 #16080] ERROR -- default-centos-75: ---Nested Exception---
+E, [2018-06-22T14:28:14.524238 #16080] ERROR -- default-centos-75: Class: Kitchen::Transport::SshFailed
+E, [2018-06-22T14:28:14.524288 #16080] ERROR -- default-centos-75: Message: SSH exited (1) for command: [sh -c '
+TEST_KITCHEN="1"; export TEST_KITCHEN
+sudo -E /opt/chef/bin/chef-client --local-mode --config /tmp/kitchen/client.rb --log_level auto --force-formatter --no-color --json-attributes /tmp/kitchen/dna.json --chef-zero-port 8889 
+']
+E, [2018-06-22T14:28:14.524341 #16080] ERROR -- default-centos-75: ----------------------
+E, [2018-06-22T14:28:14.524392 #16080] ERROR -- default-centos-75: ------Backtrace-------
+E, [2018-06-22T14:28:14.524447 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/provisioner/base.rb:91:in `rescue in call'
+E, [2018-06-22T14:28:14.524512 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/provisioner/base.rb:67:in `call'
+E, [2018-06-22T14:28:14.524569 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:393:in `block in converge_action'
+E, [2018-06-22T14:28:14.524625 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:536:in `synchronize_or_call'
+E, [2018-06-22T14:28:14.524677 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:498:in `block in action'
+E, [2018-06-22T14:28:14.524729 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/2.5.0/benchmark.rb:293:in `measure'
+E, [2018-06-22T14:28:14.524781 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:497:in `action'
+E, [2018-06-22T14:28:14.524833 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:389:in `converge_action'
+E, [2018-06-22T14:28:14.524919 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:368:in `block in transition_to'
+E, [2018-06-22T14:28:14.524999 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `each'
+E, [2018-06-22T14:28:14.525075 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:367:in `transition_to'
+E, [2018-06-22T14:28:14.525128 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/instance.rb:135:in `converge'
+E, [2018-06-22T14:28:14.525183 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `public_send'
+E, [2018-06-22T14:28:14.525235 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:197:in `run_action_in_thread'
+E, [2018-06-22T14:28:14.525286 #16080] ERROR -- default-centos-75: C:/opscode/chefdk/embedded/lib/ruby/gems/2.5.0/gems/test-kitchen-1.21.2/lib/kitchen/command.rb:169:in `block (2 levels) in run_action'
+E, [2018-06-22T14:28:14.525376 #16080] ERROR -- default-centos-75: ----End Backtrace-----

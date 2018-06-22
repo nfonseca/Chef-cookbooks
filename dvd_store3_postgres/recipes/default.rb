@@ -45,7 +45,7 @@ end
 user 'web' do
   comment 'web user for dvdstore'
   uid '1001'
-  gid '1001'
+  manage_home true
   home '/home/web'
   shell '/bin/bash'
   password '$1$pCSCBK/r$8XjqMuFLO0gOg8LAmic9h1'
