@@ -21,10 +21,36 @@
 
 
 package 'Base Line' do
- package_name ['git', 'postgresql-server.x86_64']
+ package_name ['git', 'mariadb', 'mariadb-server','httpd']
  action [:install]
 end
 
+
+service "mariadb" do
+  action :start
+end
+
+service "httpd" do
+  action :start
+end
+
+
 execute 'git clone dvdstore' do
+  cwd '/opt'
   command 'git clone https://github.com/dvdstore/ds3.git'
 end
+
+
+
+user 'web' do
+  comment 'web user for dvdstore'
+  uid '1001'
+  gid '1001'
+  home '/home/web'
+  shell '/bin/bash'
+  password '$1$pCSCBK/r$8XjqMuFLO0gOg8LAmic9h1'
+end
+
+# user web and pass web
+#systemctl start mariadb.service 
+# need to create web user for mysql in the db

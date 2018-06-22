@@ -1,26 +1,5 @@
-I, [2018-06-15T17:38:05.959345 #19180]  INFO -- default-centos-75: -----> Converging <default-centos-75>...
-I, [2018-06-15T17:38:05.962245 #19180]  INFO -- default-centos-75: Preparing files for transfer
-I, [2018-06-15T17:38:05.962570 #19180]  INFO -- default-centos-75: Preparing dna.json
-I, [2018-06-15T17:38:05.974180 #19180]  INFO -- default-centos-75: Resolving cookbook dependencies with Berkshelf 7.0.2...
-I, [2018-06-15T17:38:13.231133 #19180]  INFO -- default-centos-75: Removing non-cookbook files before transfer
-I, [2018-06-15T17:38:13.295598 #19180]  INFO -- default-centos-75: Preparing validation.pem
-I, [2018-06-15T17:38:13.298324 #19180]  INFO -- default-centos-75: Preparing client.rb
-I, [2018-06-15T17:38:13.740033 #19180]  INFO -- default-centos-75: -----> Chef Omnibus installation detected (install only if missing)
-I, [2018-06-15T17:38:13.796440 #19180]  INFO -- default-centos-75: Transferring files to <default-centos-75>
-I, [2018-06-15T17:38:16.846422 #19180]  INFO -- default-centos-75: Starting Chef Client, version 14.2.0
-I, [2018-06-15T17:38:19.039161 #19180]  INFO -- default-centos-75: resolving cookbooks for run list: ["dvd_store3_postgres::default"]
-I, [2018-06-15T17:38:19.063010 #19180]  INFO -- default-centos-75: Synchronizing Cookbooks:
-I, [2018-06-15T17:38:19.074754 #19180]  INFO -- default-centos-75:   - dvd_store3_postgres (0.1.0)
-I, [2018-06-15T17:38:19.087248 #19180]  INFO -- default-centos-75: Installing Cookbook Gems:
-I, [2018-06-15T17:38:19.092032 #19180]  INFO -- default-centos-75: Compiling Cookbooks...
-I, [2018-06-15T17:38:19.099115 #19180]  INFO -- default-centos-75: Converging 2 resources
-I, [2018-06-15T17:38:19.099476 #19180]  INFO -- default-centos-75: Recipe: dvd_store3_postgres::default
-I, [2018-06-15T17:38:20.947510 #19180]  INFO -- default-centos-75:   * yum_package[Base Line] action install (up to date)
-I, [2018-06-15T17:42:32.484026 #19180]  INFO -- default-centos-75:   * execute[git clone dvdstore] action run
-I, [2018-06-15T17:42:32.484165 #19180]  INFO -- default-centos-75:     - execute git clone https://github.com/dvdstore/ds3.git
-I, [2018-06-15T17:42:32.583915 #19180]  INFO -- default-centos-75: 
-I, [2018-06-15T17:42:32.584047 #19180]  INFO -- default-centos-75: Running handlers:
-I, [2018-06-15T17:42:32.584118 #19180]  INFO -- default-centos-75: Running handlers complete
-I, [2018-06-15T17:42:32.589932 #19180]  INFO -- default-centos-75: Chef Client finished, 1/2 resources updated in 04 minutes 15 seconds
-I, [2018-06-15T17:42:32.623781 #19180]  INFO -- default-centos-75: Downloading files from <default-centos-75>
-I, [2018-06-15T17:42:32.690616 #19180]  INFO -- default-centos-75: Finished converging <default-centos-75> (4m26.73s).
+I, [2018-06-22T12:15:49.308650 #544]  INFO -- default-centos-75: -----> Destroying <default-centos-75>...
+I, [2018-06-22T12:15:55.953862 #544]  INFO -- default-centos-75: ==> default: Forcing shutdown of VM...
+I, [2018-06-22T12:15:57.345798 #544]  INFO -- default-centos-75: ==> default: Destroying VM and associated drives...
+I, [2018-06-22T12:15:57.858924 #544]  INFO -- default-centos-75: Vagrant instance <default-centos-75> destroyed.
+I, [2018-06-22T12:15:57.863078 #544]  INFO -- default-centos-75: Finished destroying <default-centos-75> (0m8.55s).
