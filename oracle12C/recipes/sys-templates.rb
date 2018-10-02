@@ -21,4 +21,18 @@ template '/etc/security/limits.conf' do
 end
 
 
+execute 'sysctl1' do
+  command 'sysctl -p'
+end
+
+execute 'sysctl2' do
+  command 'sysctl -a'
+end
+
+# Update a package or packages on your system
+
+execute 'yum_update' do
+  command '/usr/bin/yum update -y'
+end
+
 
