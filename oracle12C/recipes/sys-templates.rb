@@ -35,6 +35,13 @@ execute 'yum_update' do
   command '/usr/bin/yum update -y'
 end
 
+# disable the firewall
+
+service 'firewalld' do
+  service_name 'firewalld'
+  action :disable
+end
+
 
 # Create the dirs u01 and u02
 
