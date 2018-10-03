@@ -36,3 +36,23 @@ execute 'yum_update' do
 end
 
 
+# Create the dirs u01 and u02
+
+
+
+directory 'u01' do
+  owner 'oracle'
+  group 'oinstall'
+  mode '0755'
+  path '/u01'
+  action :create
+end
+
+
+directory 'u02' do
+  owner 'oracle'
+  group 'oinstall'
+  mode '0755'
+  path '/u02'
+  action :create
+end

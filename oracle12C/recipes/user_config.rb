@@ -5,13 +5,20 @@
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
 
+
+Chef::Recipe.send(:include, OpenSSLCookbook::RandomPassword)
+password = 'vxrail123'
+salt = random_password(length: 10)
+crypt_password = password.crypt("$6$#{salt}")
+
+
 user 'oracle' do
   comment 		'oracle user'
   manage_home	true
   home 			'/home/oracle'
   shell 		'/bin/bash'
   gid 			'oinstall'
-  password 		'$1$JJsvHslasdfjVEroftprNn4JHtDi'
+  password 		crypt_password
   username      'oracle'
 end
 
