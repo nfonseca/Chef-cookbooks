@@ -1,10 +1,8 @@
 #
 # Cookbook:: oracle12C
-# Recipe:: default
+# Recipe:: user_config
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
-
-
 
 Chef::Recipe.send(:include, OpenSSLCookbook::RandomPassword)
 password = 'vxrail123'
@@ -17,11 +15,9 @@ user 'oracle' do
   manage_home	true
   home 			'/home/oracle'
   shell 		'/bin/bash'
-  gid 			'oinstall'
   password 		crypt_password
   username      'oracle'
 end
-
 
 
 group 'oinstall' do
@@ -41,4 +37,15 @@ end
 
 
 
+# Env Variables
+
+bash 'ENV' do
+
+  code <<-EOH
+    export ORACLE_HOME=/u01/app/oracle/product/12.2.0/dbhome_1/
+    export ORACLE_SID=ORCL
+    export TNS_ADMIN=/u01/app/oracle/product/12.2.0/dbhome_1/network/admin/
+    EOH
+	
+end
 
