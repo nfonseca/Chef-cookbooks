@@ -1,10 +1,10 @@
 name 'oracle12C'
 maintainer 'The Authors'
-maintainer_email 'you@example.com'
+maintainer_email 'nelson.fonseca@emc.com'
 license 'All Rights Reserved'
-description 'Installs/Configures oracle12C'
+description 'Installs/Configures oracle12C on CentOS 7.x'
 long_description 'Installs/Configures oracle12C'
-version '0.2.0'
+version '0.7.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
 depends 'openssl'
 

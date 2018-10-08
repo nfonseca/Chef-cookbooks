@@ -42,9 +42,14 @@ end
 bash 'ENV' do
 
   code <<-EOH
-    export ORACLE_HOME=/u01/app/oracle/product/12.2.0/dbhome_1/
-    export ORACLE_SID=ORCL
-    export TNS_ADMIN=/u01/app/oracle/product/12.2.0/dbhome_1/network/admin/
+    echo 'ORACLE_HOME=/u01/app/oracle/product/12.2.0/dbhome_1' >> /home/oracle/.bash_profile
+    echo 'ORACLE_SID=ORCL' >> /home/oracle/.bash_profile
+	echo 'TNS_ADMIN=/u01/app/oracle/product/12.2.0/dbhome_1/network/admin' >> /home/oracle/.bash_profile
+	echo 'PATH=$PATH:$ORACLE_HOME/bin' >> /home/oracle/.bash_profile
+	echo 'export ORACLE_HOME'  >> /home/oracle/.bash_profile
+	echo 'export ORACLE_SID'  >> /home/oracle/.bash_profile
+	echo 'export TNS_ADMIN'  >> /home/oracle/.bash_profile
+	echo 'export PATH'  >> /home/oracle/.bash_profile
     EOH
 	
 end

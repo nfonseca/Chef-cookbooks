@@ -62,7 +62,7 @@ ORACLE_BASE=/u01/app/oracle
 
 #-------------------------------------------------------------------------------
 
-oracle.install.db.InstallEdition=EE
+oracle.install.db.InstallEdition=SE2
 ###############################################################################
 #                                                                             #
 # PRIVILEGED OPERATING SYSTEM GROUPS                                          #
@@ -196,12 +196,12 @@ oracle.install.db.config.starterdb.SID=orcl
 # The value can be either "true" or "false". If left blank it will be assumed
 # to be "false".
 #-------------------------------------------------------------------------------
-oracle.install.db.ConfigureAsContainerDB=true
+oracle.install.db.ConfigureAsContainerDB=false
 
 #-------------------------------------------------------------------------------
 # Specify the  Pluggable Database name for the pluggable database in Container Database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.PDBName=orclpdb
+oracle.install.db.config.PDBName=
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database character set.
@@ -231,7 +231,7 @@ oracle.install.db.config.starterdb.memoryOption=false
 # on the system.
 # Example: oracle.install.db.config.starterdb.memoryLimit=512
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.memoryLimit=3128
+oracle.install.db.config.starterdb.memoryLimit=2048
 
 #-------------------------------------------------------------------------------
 # This variable controls whether to load Example Schemas onto

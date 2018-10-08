@@ -28,13 +28,39 @@ template '/tmp/database/oraInst.loc' do
 end
 
 
-bash 'INSTALL_DB' do
+# bash 'INSTALL_DB' do
 
-  user 'oracle'
-  cwd  '/tmp/database'
-  code <<-EOH
-    /tmp/database/runInstaller -silent -responseFile /tmp/database/ora12.rsp -invPtrLoc oraInst.loc
-  EOH
+  # user 'oracle'
+  # cwd  '/tmp/database'
+  # code <<-EOH
+    # /tmp/database/runInstaller -silent -responseFile /tmp/database/ora12.rsp  -debug -waitForCompletion
+  # EOH
 	
+# end
+
+
+execute 'INSTALL_DB' do
+  user 'oracle'
+  command '/tmp/database/runInstaller -silent -responseFile /tmp/database/ora12.rsp  -debug -waitForCompletion'
 end
 
+
+
+execute 'Post-Install 1/3 orainstRoot.sh' do
+  user 'root'
+  command '/u01/app/oraInventory/orainstRoot.sh'
+  not_if 'sleep 10000', :timeout => 10
+end
+
+
+execute 'Post-Install 2/3 root.sh' do
+  user 'root'
+  command '/u01/app/oracle/product/12.2.0/dbhome_1/root.sh'
+  not_if 'sleep 10000', :timeout => 10
+end
+
+execute 'Post-Install 3/3 root.sh' do
+  user 'oracle'
+  command '/tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent -debug'
+  not_if 'sleep 10000', :timeout => 10
+end
