@@ -4,7 +4,7 @@ maintainer_email 'nelson.fonseca@emc.com'
 license 'All Rights Reserved'
 description 'Installs/Configures oracle12C on CentOS 7.x'
 long_description 'Installs/Configures oracle12C'
-version '0.7.0'
+version '0.8.0'
 chef_version '>= 12.14' if respond_to?(:chef_version)
 depends 'openssl'
 

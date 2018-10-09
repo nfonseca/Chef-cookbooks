@@ -35,7 +35,12 @@ group 'dba' do
   action                :create
 end
 
-
+user 'oracle' do
+  comment 		'oracle user'
+  gid			'oinstall'
+  username      'oracle'
+  action        :modify
+end
 
 # Env Variables
 
