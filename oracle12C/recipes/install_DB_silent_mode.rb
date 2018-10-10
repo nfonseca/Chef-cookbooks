@@ -32,8 +32,9 @@ bash 'INSTALL_DB' do
 
   user 'root'
   cwd  '/tmp/database'
+  ignore_failure true
   code <<-EOH
-    sudo -Eu oracle /tmp/database/runInstaller -responseFile /tmp/database/ora12.rsp -debug -waitForCompletion -silent
+    sudo -Eu oracle /tmp/database/runInstaller -responseFile /tmp/database/ora12.rsp -debug -waitForCompletion -ignoreSysPrereqs -ignoreInternalDriverError -silent
 	returns [0, 6]
   EOH
 	
@@ -48,7 +49,7 @@ end
 # end
 
 
-
+# change from execute to bash
 execute 'Post-Install 1/3 orainstRoot.sh' do
   user 'root'
   command '/u01/app/oraInventory/orainstRoot.sh'
@@ -56,6 +57,19 @@ execute 'Post-Install 1/3 orainstRoot.sh' do
   # retry_delay 5
   # not_if 'ps aux | grep [D]oracle.installer'
 end
+
+
+
+# bash 'INSTALL_DB' do
+
+  # user 'root'
+  # cwd  '/u01'
+  # code <<-EOH
+    # /u01/app/oraInventory/orainstRoot.sh
+	# returns [0, 6]
+  # EOH
+	
+# end
 
 
 execute 'Post-Install 2/3 root.sh' do
@@ -66,6 +80,20 @@ execute 'Post-Install 2/3 root.sh' do
   # not_if 'ps aux | grep [D]oracle.installer'
 end
 
+# bash 'INSTALL_DB' do
+
+  # user 'root'
+  # cwd  '/u01'
+  # code <<-EOH
+    # /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
+	# returns [0, 6]
+  # EOH
+	
+# end
+
+
+
+
 # execute 'Post-Install 3/3 root.sh' do
   # user 'oracle'
   # command '/tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent -debug -ignorePrereqFailure'
@@ -73,12 +101,21 @@ end
 # end
 
 
-# bash 'INSTALL_CONFIG_TOOLS' do
-  # user 'root'
-  # cwd  '/tmp/database'
-  # code <<-EOH
-    # sudo -Eu oracle /tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent
-	# returns [0, 6]
-  # EOH
+bash 'INSTALL_CONFIG_TOOLS' do
+  ignore_failure true
+  user 'root'
+  cwd  '/tmp/database'
+  code <<-EOH
+    sudo -Eu oracle /tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent
+	returns [0, 6]
+  EOH
 	
-# end
+end
+
+
+
+# TEST DEPLOYMENT
+execute 'SQL TEST' do
+  user 'oracle'
+  command 'echo "select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v$instance;" | sqlplus -s sys/vxrail123@ORCL'
+end
