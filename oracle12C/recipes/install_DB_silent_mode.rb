@@ -41,12 +41,6 @@ bash 'INSTALL_DB' do
 end
 
 
-# execute 'INSTALL_DB' do
-  # user 		'oracle'
-  # group		'oinstall'                      
-  # command 	'/tmp/database/runInstaller -silent -responseFile /tmp/database/ora12.rsp -invPtrLoc /tmp/database/oraInst.loc -debug -waitForCompletion'
-  # live_stream true
-# end
 
 
 # change from execute to bash
@@ -60,17 +54,6 @@ end
 
 
 
-# bash 'INSTALL_DB' do
-
-  # user 'root'
-  # cwd  '/u01'
-  # code <<-EOH
-    # /u01/app/oraInventory/orainstRoot.sh
-	# returns [0, 6]
-  # EOH
-	
-# end
-
 
 execute 'Post-Install 2/3 root.sh' do
   user 'root'
@@ -80,25 +63,6 @@ execute 'Post-Install 2/3 root.sh' do
   # not_if 'ps aux | grep [D]oracle.installer'
 end
 
-# bash 'INSTALL_DB' do
-
-  # user 'root'
-  # cwd  '/u01'
-  # code <<-EOH
-    # /u01/app/oracle/product/12.2.0/dbhome_1/root.sh
-	# returns [0, 6]
-  # EOH
-	
-# end
-
-
-
-
-# execute 'Post-Install 3/3 root.sh' do
-  # user 'oracle'
-  # command '/tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent -debug -ignorePrereqFailure'
-  # returns [0, 6]
-# end
 
 
 bash 'INSTALL_CONFIG_TOOLS' do
@@ -114,8 +78,14 @@ end
 
 
 
+
 # TEST DEPLOYMENT
-execute 'SQL TEST' do
+script 'TEST DEPLOYMENT' do
+  interpreter 'bash'
   user 'oracle'
-  command 'echo "select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v$instance;" | sqlplus -s sys/vxrail123@ORCL'
+  live_stream true
+  environment ({'ORACLE_SID' => 'ORCL','ORACLE_HOME' => '/u01/app/oracle/product/12.2.0/dbhome_1','TNS_ADMIN' => '/u01/app/oracle/product/12.2.0/dbhome_1/network/admin'})
+  code <<~EOH 
+  echo 'select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v$instance;' | /u01/app/oracle/product/12.2.0/dbhome_1/bin/sqlplus -s sys/vxrail123@ORCL AS SYSDBA
+  EOH
 end
