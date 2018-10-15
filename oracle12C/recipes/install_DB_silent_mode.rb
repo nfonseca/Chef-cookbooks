@@ -78,14 +78,12 @@ end
 
 
 
-
-# TEST DEPLOYMENT
-script 'TEST DEPLOYMENT' do
+script 'SQL TEST' do
   interpreter 'bash'
   user 'oracle'
   live_stream true
   environment ({'ORACLE_SID' => 'ORCL','ORACLE_HOME' => '/u01/app/oracle/product/12.2.0/dbhome_1','TNS_ADMIN' => '/u01/app/oracle/product/12.2.0/dbhome_1/network/admin'})
-  code <<~EOH 
-  echo 'select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v$instance;' | /u01/app/oracle/product/12.2.0/dbhome_1/bin/sqlplus -s sys/vxrail123@ORCL AS SYSDBA
+  code <<-EOH 'echo "select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v\$instance;" | /u01/app/oracle/product/12.2.0/dbhome_1/bin/sqlplus -s sys/vxrail123@ORCL AS SYSDBA'
   EOH
+  
 end

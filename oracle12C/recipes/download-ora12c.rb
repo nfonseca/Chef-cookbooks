@@ -4,6 +4,7 @@
 #
 # Copyright:: 2018, The Authors, All Rights Reserved.
 
+ora_path = '/tmp/linuxx64_12201_database.zip'
 
 bash 'download_ora12c' do
   live_stream true
@@ -13,6 +14,7 @@ bash 'download_ora12c' do
   wget http://192.168.10.153/Others/linuxx64_12201_database.zip
   unzip -o linuxx64_12201_database.zip
   EOH
+  not_if { ::File.exist?(ora_path) } # guard to prevent file from being downladed if it exists
 end
 
 
