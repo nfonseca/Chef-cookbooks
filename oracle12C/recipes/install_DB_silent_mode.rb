@@ -69,7 +69,7 @@ bash 'INSTALL_CONFIG_TOOLS' do
   ignore_failure true
   user 'root'
   cwd  '/tmp/database'
-  code <<-EOH
+  code <<~EOH
     sudo -Eu oracle /tmp/database/runInstaller -executeConfigTools -responseFile /tmp/database/ora12.rsp -silent
 	returns [0, 6]
   EOH
@@ -78,12 +78,16 @@ end
 
 
 
-script 'SQL TEST' do
+
+# TEST DB CONNECTION
+script 'TEST DB CONNECTION' do
   interpreter 'bash'
   user 'oracle'
   live_stream true
   environment ({'ORACLE_SID' => 'ORCL','ORACLE_HOME' => '/u01/app/oracle/product/12.2.0/dbhome_1','TNS_ADMIN' => '/u01/app/oracle/product/12.2.0/dbhome_1/network/admin'})
-  code <<-EOH 'echo "select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v\$instance;" | /u01/app/oracle/product/12.2.0/dbhome_1/bin/sqlplus -s sys/vxrail123@ORCL AS SYSDBA'
+  code <<~EOH 
+  echo 'Sleep 60s - Wait for DB to be UP'
+  sleep 60
+  echo 'select HOST_NAME,VERSION,STARTUP_TIME,DATABASE_STATUS from  v$instance;' | /u01/app/oracle/product/12.2.0/dbhome_1/bin/sqlplus -s sys/vxrail123@ORCL AS SYSDBA
   EOH
-  
 end
