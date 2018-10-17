@@ -42,7 +42,7 @@ user 'oracle' do
   action        :modify
 end
 
-# Env Variables
+# Env Variables for oracle user
 
 bash 'ENV' do
 

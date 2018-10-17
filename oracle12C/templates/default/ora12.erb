@@ -27,7 +27,7 @@ oracle.install.responseFileVersion=/oracle/install/rspfmt_dbinstall_response_sch
 #   - INSTALL_DB_AND_CONFIG
 #   - UPGRADE_DB
 #-------------------------------------------------------------------------------
-oracle.install.option=INSTALL_DB_AND_CONFIG
+oracle.install.option=INSTALL_DB_SWONLY
 
 #-------------------------------------------------------------------------------
 # Specify the Unix group to be set for the inventory directory.  
@@ -179,29 +179,29 @@ oracle.install.db.rac.serverpoolCardinality=0
 # GENERAL_PURPOSE: A starter database designed for general purpose use or transaction-heavy applications.
 # DATA_WAREHOUSE : A starter database optimized for data warehousing applications.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
+#oracle.install.db.config.starterdb.type=GENERAL_PURPOSE
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database Global Database Name. 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.globalDBName=orcl
+#oracle.install.db.config.starterdb.globalDBName=orcl
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database SID.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.SID=orcl
+#oracle.install.db.config.starterdb.SID=orcl
 
 #-------------------------------------------------------------------------------
 # Specify whether the database should be configured as a Container database.
 # The value can be either "true" or "false". If left blank it will be assumed
 # to be "false".
 #-------------------------------------------------------------------------------
-oracle.install.db.ConfigureAsContainerDB=false
+#oracle.install.db.ConfigureAsContainerDB=false
 
 #-------------------------------------------------------------------------------
 # Specify the  Pluggable Database name for the pluggable database in Container Database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.PDBName=
+#oracle.install.db.config.PDBName=
 
 #-------------------------------------------------------------------------------
 # Specify the Starter Database character set.
@@ -215,7 +215,7 @@ oracle.install.db.config.PDBName=
 #  KO16MSWIN949, ZHS16GBK, TH8TISASCII, ZHT32EUC, ZHT16MSWIN950,
 #  ZHT16HKSCS, WE8ISO8859P9, TR8MSWIN1254, VN8MSWIN1258
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.characterSet=AL32UTF8
+#oracle.install.db.config.starterdb.characterSet=AL32UTF8
 
 #------------------------------------------------------------------------------
 # This variable should be set to true if Automatic Memory Management 
@@ -223,7 +223,7 @@ oracle.install.db.config.starterdb.characterSet=AL32UTF8
 # If Automatic Memory Management is not desired, and memory allocation
 # is to be done manually, then set it to false.
 #------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.memoryOption=false
+#oracle.install.db.config.starterdb.memoryOption=false
 
 #-------------------------------------------------------------------------------
 # Specify the total memory allocation for the database. Value(in MB) should be
@@ -231,7 +231,7 @@ oracle.install.db.config.starterdb.memoryOption=false
 # on the system.
 # Example: oracle.install.db.config.starterdb.memoryLimit=512
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.memoryLimit=2048
+#oracle.install.db.config.starterdb.memoryLimit=2048
 
 #-------------------------------------------------------------------------------
 # This variable controls whether to load Example Schemas onto
@@ -239,7 +239,7 @@ oracle.install.db.config.starterdb.memoryLimit=2048
 # The value can be either "true" or "false". If left blank it will be assumed
 # to be "false".
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.installExampleSchemas=true
+#oracle.install.db.config.starterdb.installExampleSchemas=true
 
 ###############################################################################
 #                                                                             #
@@ -258,28 +258,28 @@ oracle.install.db.config.starterdb.installExampleSchemas=true
 # This variable holds the password that is to be used for all schemas in the
 # starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.ALL=vxrail123
+#oracle.install.db.config.starterdb.password.ALL=vxrail123
 
 #-------------------------------------------------------------------------------
 # Specify the SYS password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.SYS=vxrail123
+#oracle.install.db.config.starterdb.password.SYS=vxrail123
 
 #-------------------------------------------------------------------------------
 # Specify the SYSTEM password for the starter database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.SYSTEM=vxrail123
+#oracle.install.db.config.starterdb.password.SYSTEM=vxrail123
 
 #-------------------------------------------------------------------------------
 # Specify the DBSNMP password for the starter database.
 # Applicable only when oracle.install.db.config.starterdb.managementOption=CLOUD_CONTROL
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.DBSNMP=vxrail123
+#oracle.install.db.config.starterdb.password.DBSNMP=vxrail123
 
 #-------------------------------------------------------------------------------
 # Specify the PDBADMIN password required for creation of Pluggable Database in the Container Database.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.password.PDBADMIN=vxrail123
+#oracle.install.db.config.starterdb.password.PDBADMIN=vxrail123
 
 #-------------------------------------------------------------------------------
 # Specify the management option to use for managing the database.
@@ -287,31 +287,31 @@ oracle.install.db.config.starterdb.password.PDBADMIN=vxrail123
 # 1. CLOUD_CONTROL - If you want to manage your database with Enterprise Manager Cloud Control along with Database Express.
 # 2. DEFAULT   -If you want to manage your database using the default Database Express option.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.managementOption=DEFAULT
+#oracle.install.db.config.starterdb.managementOption=DEFAULT
 
 #-------------------------------------------------------------------------------
 # Specify the OMS host to connect to Cloud Control.
 # Applicable only when oracle.install.db.config.starterdb.managementOption=CLOUD_CONTROL
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.omsHost=
+#oracle.install.db.config.starterdb.omsHost=
 
 #-------------------------------------------------------------------------------
 # Specify the OMS port to connect to Cloud Control.
 # Applicable only when oracle.install.db.config.starterdb.managementOption=CLOUD_CONTROL
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.omsPort=0
+#oracle.install.db.config.starterdb.omsPort=0
 
 #-------------------------------------------------------------------------------
 # Specify the EM Admin user name to use to connect to Cloud Control.
 # Applicable only when oracle.install.db.config.starterdb.managementOption=CLOUD_CONTROL
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.emAdminUser=
+#oracle.install.db.config.starterdb.emAdminUser=
 
 #-------------------------------------------------------------------------------
 # Specify the EM Admin password to use to connect to Cloud Control.
 # Applicable only when oracle.install.db.config.starterdb.managementOption=CLOUD_CONTROL
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.emAdminPassword=
+#oracle.install.db.config.starterdb.emAdminPassword=
 
 ###############################################################################
 #                                                                             #
@@ -325,7 +325,7 @@ oracle.install.db.config.starterdb.emAdminPassword=
 # This variable is to be set to false if database recovery is not required. Else 
 # this can be set to true.
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.enableRecovery=false
+#oracle.install.db.config.starterdb.enableRecovery=false
 
 #-------------------------------------------------------------------------------
 # Specify the type of storage to use for the database.
@@ -333,7 +333,7 @@ oracle.install.db.config.starterdb.enableRecovery=false
 #   - FILE_SYSTEM_STORAGE
 #   - ASM_STORAGE
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
+#oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
 
 #-------------------------------------------------------------------------------
 # Specify the database file location which is a directory for datafiles, control
@@ -341,28 +341,28 @@ oracle.install.db.config.starterdb.storageType=FILE_SYSTEM_STORAGE
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/u02
+#oracle.install.db.config.starterdb.fileSystemStorage.dataLocation=/u02
 
 #-------------------------------------------------------------------------------
 # Specify the recovery location.
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=FILE_SYSTEM_STORAGE 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
+#oracle.install.db.config.starterdb.fileSystemStorage.recoveryLocation=
 
 #-------------------------------------------------------------------------------
 # Specify the existing ASM disk groups to be used for storage.
 #
 # Applicable only when oracle.install.db.config.starterdb.storageType=ASM_STORAGE
 #-------------------------------------------------------------------------------
-oracle.install.db.config.asm.diskGroup=
+#oracle.install.db.config.asm.diskGroup=
 
 #-------------------------------------------------------------------------------
 # Specify the password for ASMSNMP user of the ASM instance.                 
 #
 # Applicable only when oracle.install.db.config.starterdb.storage=ASM_STORAGE 
 #-------------------------------------------------------------------------------
-oracle.install.db.config.asm.ASMSNMPPassword=
+#oracle.install.db.config.asm.ASMSNMPPassword=
 
 #------------------------------------------------------------------------------
 # Specify the My Oracle Support Account Username.

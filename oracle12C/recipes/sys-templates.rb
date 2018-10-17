@@ -40,7 +40,7 @@ end
 
 service 'firewalld' do
   service_name 'firewalld'
-  action :disable
+  action [:disable, :stop]
 end
 
 
@@ -57,10 +57,10 @@ directory 'u01' do
 end
 
 
-directory 'u02' do
-  owner 'oracle'
-  group 'oinstall'
-  mode '0755'
-  path '/u02'
-  action :create
-end
+# directory 'u02' do
+  # owner 'oracle'
+  # group 'oinstall'
+  # mode '0755'
+  # path '/u02'
+  # action :create
+# end
